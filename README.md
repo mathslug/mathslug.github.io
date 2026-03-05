@@ -1,14 +1,6 @@
 # mathslug.github.io
 
-Personal site for John Bentley. Static HTML, CSS, and JS—no frameworks.
-
-## Local development
-
-```
-python3 -m http.server 8000
-```
-
-Then open http://localhost:8000
+Personal site for John Bentley. Static HTML, CSS, and JS. No frameworks.
 
 ## Structure
 
