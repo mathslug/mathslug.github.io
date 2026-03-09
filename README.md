@@ -1,6 +1,6 @@
 # mathslug.github.io
 
-Personal site for John Bentley. Static HTML, CSS, and JS. No frameworks.
+My personal site. Static HTML, CSS, and JS. No frameworks.
 
 ## Structure
 
