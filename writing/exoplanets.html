@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Made an Exoplanet Webapp — John Bentley</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <main>
+        <a class="backlink" href="/writing/">← Writing</a>
+
+        <article>
+            <header class="article-head">
+                <h1>I Made an Exoplanet Webapp</h1>
+                <p class="subtitle">And I Learned How to Use R Shiny in the Process</p>
+                <p class="meta">October 2018</p>
+            </header>
+
+            <div class="article">
+                <h2>Interest</h2>
+                <p>One of my favorite photos I've ever taken was on a trip to Bolivia with my roommate and
+                    friends: the view from the final El Alto stop on Mi Teleférico. I believe this is the
+                    Vista de la Línea Amarilla (yellow line), though to be perfectly frank I don't remember
+                    which color line takes you there.</p>
+                <p>I have a lot to say about that trip, the fascinating cities of La Paz and El Alto, and
+                    that image, but for now I'll just say this: it's one of those views that reminds me we
+                    live on a <em>planet</em> in <em>space</em>. To conjure a similar feeling you can always
+                    image-search "surface of Mars" and "Canyonlands National Park" in two different browser
+                    tabs and then rapidly flip back and forth between them. I also love to look at the old
+                    Soviet photos of the surface of Venus.</p>
+                <p>I had the pleasure of attending a lecture on exoplanet detection by the astronomer Meg
+                    Urry in 2013 or 2014, and was floored by how the number of exoplanet candidates has
+                    exploded in recent years. As I tried to contextualize the sheer number of planets out
+                    there, I realized (maybe this is obvious to everyone) that all rocky planets have a
+                    surface you can stand on, though who knows for how long. Any planet that has or had an
+                    internal dynamo probably has mountains, and any planet that orbits close enough to a
+                    star probably has visible light. There are places billions of light years away where you
+                    could perform the seemingly so-human act of standing and marveling at a mountain. Maybe,
+                    out there, someone is.</p>
+
+                <h2>Background</h2>
+                <p>Exoplanet discoveries (a planet that orbits a star other than the sun) are exciting
+                    because each new one could be the planet on which we discover extraterrestrial life. In
+                    aggregate, the tremendous success of exoplanet search projects suggests that exoplanets
+                    might be common among stars in the universe. The likelihood that life even remotely
+                    similar to life as we know it exists elsewhere is a function of how likely
+                    life-supporting planets are to form around a given star. The search for and study of
+                    exoplanets is therefore critical to our understanding of our place in the universe.</p>
+                <p>The search has just begun. The first exoplanet was confirmed only in 1992, and only
+                    recently have modern, prolific search methods been developed. Research teams use various
+                    techniques to find candidate objects, then review them and determine whether they can
+                    reasonably be sure the object is a planet. Then the planet is added to the list of
+                    confirmed exoplanets, which can be found at exoplanet.eu — the source of my data for
+                    this project.</p>
+
+                <h2>App</h2>
+                <p>I created a Shiny app to visualize some of the properties and methods of discovery of the
+                    ~4,000 exoplanets discovered to date. I envision it as an educational tool that invites
+                    the user to question the meaning of the data and instills a sense of excitement about
+                    exoplanets. See the app <a href="https://mathslug.shinyapps.io/exoplanetShiny">here</a>.
+                </p>
+                <p>The first page contains a large scatter plot of most of the exoplanets, with distance
+                    from earth and mass as the log-scale axes. The points are colored to show which method
+                    was used to discover each exoplanet. The user can move a slider to show all discoveries
+                    through a given year; moving it helps one understand the magnitude of the exoplanet
+                    explosion in recent years. The coloring shows that certain methods seem to be better at
+                    discovering very distant planets or less massive ones. Some internet searching shows
+                    that this is true. For instance, the Kepler mission discovered many smaller, earth-like
+                    planets that were confirmed in 2014 using the transit method. The transit method
+                    involves measuring drops in a star's brightness caused by an object regularly passing in
+                    front of it, like a planet. It requires a powerful telescope and can detect smaller
+                    planets than microlensing, which measures light distortion due to distant, massive
+                    objects.</p>
+                <figure>
+                    <img src="/images/exoShiny.png" alt="The front page of my app">
+                    <figcaption>The front page of my app.</figcaption>
+                </figure>
+                <p>The second page contains two graphs showing the productivity of each method by year and
+                    overall. Users can hide data from any method using checkboxes in the sidebar, and the
+                    graphs readjust. Each method retains the color it had on the scatter plot on the
+                    previous page, regardless of which methods are "turned off." I learned that you can
+                    assign colors to specific categories in ggplot2 — regardless of filtering some out — by
+                    passing a named vector to the color argument when creating the graph.</p>
+                <figure>
+                    <img src="/images/planettimegraphs.png" alt="The second page of my app">
+                    <figcaption>The second page of my app.</figcaption>
+                </figure>
+                <p>The next page lets the user visualize the orbits of the planets. You can select a star
+                    from a dropdown menu, and a widget shows the path of all the planets that orbit that
+                    star over 2,000 earth days. I think this page brings the exoplanets to life, and I hope
+                    it inspires users to learn more about orbital mechanics and the planets themselves. The
+                    shape and speed of the orbits are correct. If multiple planets orbit the same star, the
+                    orbits may be offset from one another; there isn't enough data to compute that offset,
+                    so I assumed none. I used Kepler's laws to compute the path of each planet given the
+                    semi-major axis and eccentricity of its orbit. It was difficult to get the widget —
+                    generated by the GoogleVis Motion Chart — to work properly with R Shiny; among other
+                    adjustments, I used the htmlOutput function instead of plotOutput. Take a look at the
+                    code <a href="https://github.com/mathslug/exoplanetShiny">repo</a>.</p>
+                <p class="editor-note">A note from later: the orbit visualization relied on Adobe Flash,
+                    which browsers no longer support, so that page of the live app no longer animates.</p>
+                <figure>
+                    <img src="/images/orbits.png" alt="My orbit visualization">
+                    <figcaption>My orbit visualization.</figcaption>
+                </figure>
+
+                <h2>Future Work</h2>
+                <p>I hope to improve the project in a few ways. Making the first page's slider a two-point
+                    slider could add usability by letting the user see any time period's discoveries,
+                    instead of just to-date discoveries. I'd also like some way to see the number of
+                    discoveries in a given year. And I may change the first graph on the second page to a
+                    stacked graph of the number of planets discovered by method, rather than the percentage
+                    of discoveries by method.</p>
+
+                <h2>Thanks!</h2>
+                <p>If you enjoy my app or have any feedback for me, please email me. Thanks!</p>
+            </div>
+        </article>
+
+        <footer>
+            <a href="/">home</a>
+            <a href="/writing/">writing</a>
+            <a href="https://github.com/mathslug">github</a>
+            <a href="mailto:theheadslug@mathslug.com">email</a>
+        </footer>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Made My Own Cell Phone — John Bentley</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <main>
+        <a class="backlink" href="/writing/">← Writing</a>
+
+        <article>
+            <header class="article-head">
+                <h1>I Made My Own Cell Phone</h1>
+                <p class="subtitle">I call it Perfect Cell</p>
+                <p class="meta">November 2019</p>
+            </header>
+
+            <div class="article">
+                <h2>Why?</h2>
+                <p>I've had the same iPhone 5S since 2014. It works fine, and all phone design changes since
+                    the 5S have been negative. Phones are too big now, excessive cameras are obnoxious, and
+                    the obsession with removing bevels is manufactured to sell us upgrades we don't need —
+                    phones look much worse with a notch or hole in the display for the front camera. The
+                    removal of the headphone jack, home button, and fingerprint ID are objective Ls for the
+                    user that we must resist. Apple obviously made these changes to sell us more expensive
+                    junk, or in the case of Face ID to justify developing and testing
+                    privacy-disrespecting facial recognition. (I am being hyperbolic here, a little.)</p>
+                <p>Unfortunately, AT&amp;T has been sending me emails telling me that they're shutting down
+                    their 3G network (which the 5S apparently uses for normal phone stuff, even though it
+                    uses 4G for data) and that I <strong>must</strong> <em>buy</em> a new phone. The
+                    audacity.</p>
+                <p>The newer iPhones are not worth the money to me, and Google is even worse about privacy.
+                    However, I cannot be as legit as my brother and switch to a dumb phone. I need to be
+                    able to access the internet. I need the brain augmentation. I looked into the <a
+                        href="https://www.thelightphone.com">Light Phone</a> but it was just a bit too
+                    expensive for what you get. (Update: I'm also interested in a <a
+                        href="https://www.cect-shop.com/en/hisense-a5c.html">Chinese color E-ink
+                        phone</a>.)</p>
+                <p>Inspired by <a href="https://learn.adafruit.com/piphone-a-raspberry-pi-based-cellphone">this
+                        project</a>, I decided to see if I could make my own phone.</p>
+
+                <h2>Design</h2>
+                <p>Here are the main components:</p>
+                <ul>
+                    <li><strong>Waveshare SIM7600A 4G HAT:</strong> I can pop my SIM card into this and
+                        connect to the cell network to send and receive texts, calls, and data.</li>
+                    <li><strong>Adafruit 3.5" 320×480 TFT touchscreen:</strong> for display and IO.</li>
+                    <li><strong>Raspberry Pi Model 3B+:</strong> the brains.</li>
+                    <li><strong>My portable USB backup phone battery:</strong> for a portable power source.
+                        It definitely doesn't give enough voltage, but still, everything seems to work.</li>
+                </ul>
+                <p>And here's what it all looks like (sunglasses for scale)!</p>
+                <img src="/images/perfect_cell.png" alt="My homemade cell phone, with sunglasses for scale">
+                <p>The background here is mostly just for show. I didn't feel that inspired to make a GUI
+                    from scratch, so I have to do most things from the terminal, but I at least aliased
+                    commands so I don't have to type as much. You pull up the terminal from the terminal
+                    icon on the side, and you can open a touch keyboard by touching the shortcut on top of
+                    "Settings." You can also access the browser from an icon on the side. Browsing,
+                    including checking email, works perfectly well on WiFi or data, which already makes this
+                    a useful device. I've also been able to send and receive SMS (text) messages using <a
+                        href="https://www.waveshare.com/wiki/SIM7600E-H_4G_HAT">AT Commands</a>.</p>
+
+                <h2>Current Status</h2>
+                <p>I've made it to a point where I've demonstrated that it is indeed possible to make your
+                    own cell phone that does most smartphone things. This device can text, theoretically it
+                    should be able to call, and it can do anything a normal computer can do with a browser
+                    and internet connection. However, to make it usable daily I think I'd need to make a LOT
+                    of software improvements that just don't feel that exciting to me now that the proof of
+                    concept is done. It's not feasible to do almost everything via the terminal or by
+                    navigating to web pages without a better keyboard, automatic zooming, and graphical
+                    shortcuts to almost everything. Also, you have to manually check for incoming messages;
+                    I'd want to build or integrate an entire messaging client that handles conversations. So
+                    for now I'm going to keep using my 5S.</p>
+                <p>Longer term, I really like the idea of a fully modular cell phone that embraces the right
+                    to repair by using very common components, and that is all open source and easily
+                    customizable by someone who knows what they're doing. Everyone should know what they're
+                    doing anyway. There's a bare minimum of system knowledge that is morally required for
+                    technology use. Jokes (sort of) aside, the phone could be designed to be hand-holdy out
+                    of the box but very open to modification by advanced users. If you ruin your device, you
+                    just pay a small fee and mail me the SD card and I'll send you a fresh install. You can
+                    pay for a backup service so your SD card even comes with your last stable state
+                    pre-installed. Many Linux distros have done a good job of balancing defaults that just
+                    work with flexibility. I think a phone like that would have a small but dedicated
+                    market. There is a great-looking <a href="https://puri.sm/products/librem-5/">Linux
+                        phone</a> out there, but it's much higher-end. If I started this company it would be
+                    called <a href="https://dragonball.fandom.com/wiki/Perfect_Cell_Saga">Perfect Cell</a>
+                    because it kills <a href="https://dragonball.fandom.com/wiki/Android">Androids</a>. I
+                    hereby copyright the idea of a cell phone and cell phone company named something like
+                    Perfect Cell, lol.</p>
+
+                <h2>The Latest</h2>
+                <p>Well, my 5S doesn't work anymore — but I held out long enough that AT&amp;T sent me a
+                    completely free iPhone 7, so I guess I'll keep kicking the can down the road just a bit
+                    more here until I have more free time!</p>
+            </div>
+        </article>
+
+        <footer>
+            <a href="/">home</a>
+            <a href="/writing/">writing</a>
+            <a href="https://github.com/mathslug">github</a>
+            <a href="mailto:theheadslug@mathslug.com">email</a>
+        </footer>
+    </main>
+</body>
+
+</html>

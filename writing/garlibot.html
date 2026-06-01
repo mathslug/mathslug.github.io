@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The GarliBot Saga — John Bentley</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <main>
+        <a class="backlink" href="/writing/">← Writing</a>
+
+        <article>
+            <header class="article-head">
+                <h1>The GarliBot Saga</h1>
+                <p class="subtitle">A Coming-of-Age Story</p>
+                <p class="meta">March 2018</p>
+            </header>
+
+            <div class="article">
+                <h2>The Idea</h2>
+                <p>It started as a hare-brained money-making scheme … involving cryptocurrency.</p>
+                <p>It was around January 2018, and the subreddit r/GarlicBreadMemes was the hottest thing
+                    on the internet. Our household made a nightly ritual of reading the latest spicy content
+                    from it. An enterprising Reddit user undertook to create a cryptocurrency called
+                    GarliCoin for the subreddit, and the memeosphere exploded. I, of course, saw
+                    opportunity. This was going to be the millennial generation's DogeCoin. The price would
+                    surely skyrocket on meme enthusiasm, before crashing and then slowly fading as
+                    enthusiasm died and people realized they had purchased something worthless. <a
+                        href="https://coinmarketcap.com/currencies/garlicoin/">I was right, by the way.</a>
+                </p>
+                <p>I further hypothesized that the coin's maximum hypeage would likely coincide with the
+                    opening of trading on the major exchanges. This, after all, would be the first time
+                    that rivers of dumb money would easily be able to pour in, and that sharks would be able
+                    to cash out. I wanted to be one of those sharks. However, to be a shark I would need to
+                    accumulate a lot of GarliCoin <em>before</em> it hit the exchanges. Mining would be
+                    cost-prohibitive, considering we already couldn't afford our electricity bills in SF.
+                </p>
+                <p>My housemate Aubrey and I had been trying to work out how to become crypto billionaires
+                    for a while already, so I recruited him for the project. We arranged a phone call with
+                    some of the top minds of our generation. The result of our brainstorming session was
+                    the following master plan: Twitch makes Garlic Bread. I would create a robot that could
+                    make Garlic Bread, controlled by a computer. Aubrey would create a platform where users
+                    could "vote" on which action the robot should perform next by donating GarliCoin. If you
+                    wanted to turn on the oven, just send some coin to X address; if you wanted to add more
+                    cheese, send to Y address, and so on. We would train a webcam on the robot so users
+                    could see their handiwork.</p>
+                <p>We hoped that coin enthusiasts — excited about a new currency that would be worth pretty
+                    much zero, useless, and unable to be sold on an exchange — would be happy to send us
+                    coin for entertainment. I thought it was a great idea.</p>
+                <p>In the end, Aubrey got too busy at work to build the platform (which was the much harder
+                    part of the project anyway), and I stayed up all night and created a robot. With no
+                    coin-control platform, it's just a machine that makes Garlic Bread that you control with
+                    your computer.</p>
+                <p>We had a party to "celebrate." Everyone came over and ate Garlic Bread. It was fun.</p>
+                <p>We accidentally invited a crypto venture capitalist (our age) who perhaps thought this
+                    was anything more than a joke, but they had fun with us anyway and we made a new
+                    friend.</p>
+
+                <h2>The Design</h2>
+                <h3>Tool for adding cheese and garlic</h3>
+                <img src="/images/garliTool.png" alt="The cheese-and-garlic dispensing tool">
+                <p>There is a little servo in here that moves an inner piece of cardboard with a hole in it.
+                    The hole can be positioned so that cheese, garlic, or nothing is dispensed. I hung it
+                    from the stove with my climbing gear and tape.</p>
+
+                <h3>Hotplate</h3>
+                <p>We purchased an overpriced relay so I could turn the hot pad on or off with the Arduino.
+                    (In retrospect this whole project would maybe have been better suited for the Pi, but I
+                    didn't have one around at the time.) The relay was worth the price because I've used it
+                    for a lot of projects since, and I like that it comes with a safety case so I can just
+                    plug devices in like a power strip. It cuts down on the very real danger that would be me
+                    messing with household current.</p>
+
+                <h3>LEDs</h3>
+                <p>The LEDs were supposed to tell you when the internet people had decided it was time to
+                    eat the bread and put a new one in the pan…</p>
+
+                <h3>Code</h3>
+                <p>I threw all the code into a <a href="https://github.com/mathslug/GarliBot">repo</a>. It
+                    is not too complicated. I used Processing to send serial signals to the Arduino, which
+                    was eventually supposed to be replaced by the crypto-command platform. I wrote a little
+                    sweep routine for the servo, nothing unusual, so that it didn't break the funnel
+                    apparatus.</p>
+
+                <h3>Conclusion</h3>
+                <p>This project was fun and hilarious, and destroyed my kitchen.</p>
+                <video controls muted loop playsinline>
+                    <source src="/images/botvid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </article>
+
+        <footer>
+            <a href="/">home</a>
+            <a href="/writing/">writing</a>
+            <a href="https://github.com/mathslug">github</a>
+            <a href="mailto:theheadslug@mathslug.com">email</a>
+        </footer>
+    </main>
+</body>
+
+</html>

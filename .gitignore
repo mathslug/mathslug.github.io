@@ -1,4 +1,8 @@
 */.DS_Store
+.DS_Store
 Thumbs.db
 *.log
 .vscode/
+
+# Local-only source archive of old site versions / raw writing (never published)
+_archive/
