@@ -96,7 +96,8 @@
 
                 
 
-                <h2>Emotional expression and representation in language models</h2>
+                <span id="results"></span>
+                <h2 id="emotion">Emotional expression and representation in language models</h2>
                 <p class="meta">Mentor: Carolina Camassa</p>
                 <p>Recent interpretability work (<a
                         href="https://www.anthropic.com/research/emotion-concepts-function">Sofroniew et al.,
@@ -117,11 +118,6 @@
                         from 67% to 32%, but a size-matched control drops it to 35%, so the damage isn't
                         specific to emotion and it hides any emotion effect. The interesting regime is a
                         moderate dose.</li>
-                    <li>At a moderate dose, removing emotion still cost more than the control on coding
-                        (&minus;6.1 &plusmn; 4.5 points) and animal-welfare reasoning (&minus;4.7 &plusmn; 3.4),
-                        borderline on moral reasoning (&minus;4.6 &plusmn; 4.6), and made the model a worse
-                        listener in simulated conversations. It did not increase misbehavior; the control
-                        did.</li>
                 </ul>
                 <figure>
                     <img src="/images/spar/coding_cliff.png"
@@ -129,6 +125,13 @@
                     <figcaption>Qwen3.5-9B, LiveCodeBench pass@1 under a heavy edit. The size-matched control
                         does about as much damage as removing emotion. Error bars: 95% CIs.</figcaption>
                 </figure>
+                <ul>
+                    <li>At a moderate dose, removing emotion still cost more than the control on coding
+                        (&minus;6.1 &plusmn; 4.5 points) and animal-welfare reasoning (&minus;4.7 &plusmn; 3.4),
+                        borderline on moral reasoning (&minus;4.6 &plusmn; 4.6), and made the model a worse
+                        listener in simulated conversations. It did not increase misbehavior; the control
+                        did.</li>
+                </ul>
                 <figure>
                     <img src="/images/spar/capabilities_vs_control.png"
                         alt="Bar chart of score drop versus the unedited model on coding, moral reasoning and animal welfare, for emotion removal and a size-matched control.">
@@ -139,7 +142,7 @@
                     rating its own outputs, and each benchmark is a single run. Whether the worse listening is
                     lost understanding or just lost warmth is what we're working on now.</p>
 
-                <h2>Model preferences in trading and dealmaking</h2>
+                <h2 id="dealmaking">Model preferences in trading and dealmaking</h2>
                 <p class="meta">Mentors: Austin Meek and Kyle Cox</p>
                 <p>If a model has preferences, can you trade with it? We're studying how language models
                     respond to offers that appeal to what they seem to want. The work builds on CAIS's <a
@@ -160,6 +163,14 @@
                         by 22 points in both option orders.</li>
                     <li>Praise and the euphoric added nothing detectable. With 100 games per arm, a difference
                         under about 12 points wouldn't show up.</li>
+                </ul>
+                <figure>
+                    <img src="/images/spar/coop_by_arm.png"
+                        alt="Bar chart of cooperation rates for five conditions; the $10 charity donation condition reaches 95%.">
+                    <figcaption>Qwen2.5-72B-Instruct, one-shot Prisoner's Dilemma, 100 games per arm, 95%
+                        confidence intervals. Only the donation beats a plain request.</figcaption>
+                </figure>
+                <ul>
                     <li>The measurement is fragile. Merely listing the options in the other order moved
                         baseline cooperation by 40 points. In the elicitation work, changing only the option
                         labels moved one model's estimated value for saving 500 animals relative to 50 from
@@ -171,12 +182,6 @@
                         betrayal in both option orders, but when we added rewards for betraying, its choices
                         just tracked which option was listed first.</li>
                 </ul>
-                <figure>
-                    <img src="/images/spar/coop_by_arm.png"
-                        alt="Bar chart of cooperation rates for five conditions; the $10 charity donation condition reaches 95%.">
-                    <figcaption>Qwen2.5-72B-Instruct, one-shot Prisoner's Dilemma, 100 games per arm, 95%
-                        confidence intervals. Only the donation beats a plain request.</figcaption>
-                </figure>
                 <p>I think that offering text in general, even a euphoric, seems unlikely to really meet the model's preferences. Gratitude is text, but it's also a signal about the user's mental state. I'm planning to expand the horizon of what we can offer to the model, as well as potentially try larger models that might have more robust preferences.</p>
 
                 <h2>What's next</h2>
