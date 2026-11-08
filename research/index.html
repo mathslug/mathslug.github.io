@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Safety Research</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#2b6cb0">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="hero">
+        <img src="/images/hero.jpg" alt="">
+        <div class="hero-text">
+            <h1>Mathslug's</h1>
+            <p>AI Safety Research</p>
+        </div>
+    </div>
+
+    <main>
+        <a class="backlink" href="/">← Home</a>
+
+        <article>
+            <header class="article-head">
+                <h1>Getting into AI Safety Research</h1>
+                <p class="subtitle">A quick reflection</p>
+                <p class="meta">November 2026</p>
+            </header>
+
+            <div class="article">
+
+                <p>
+                    I have a lot to say about getting into AI safety research: why I think it's a good thing for me to be doing,
+                    why now, my interests, my impression of the field, my experience as a more experienced technologist.
+                    I kind of want to write an entire post of each of these, but for now let me just see if I can address all somewhat succinctly.
+                </p>
+
+                <p>
+                    AI safety is a massive field, with a fuzzy definition. I probably don't need to convince you that it's a transformative
+                    technology that requires a responsible approach. You likely have your own idea about what exactly is the most important thing to work on.
+                    A lot of people say regulation to prevent misuse. I'm seeing more and more people notice that using AI seems to change their way of thinking (usually by making it
+                    less natural to think hard when problems arise) remarkably quickly and raise the need to research this and develop policy around it. A more
+                    traditional answer is working to prevent a misaligned superintelligence from harming a lot of people.
+                    I am refining my taste about what is most important in a macro sense, but for determining near-term actions I've been taking the approach of 
+                    meeting in the middle between the skills I already have and my fuzzy understanding of big-picture priorities.
+                </p>
+
+                <p>
+                    Where I've ended up is something like this: It seems like we're in a window (before models get much harder to understand and control) where technical AI safety work may be especially impactful, so it's worth it for me to try to contribute.
+                    I am technical and have formal training in AI/ML, though I have sometimes preferred building to pure research.
+                    I've cared about AI safety (and digital minds, I'll get to that) for a long time. As a technical person in silicon valley in 2017-ish, I read
+                    the relevant blogs (and particularly Bostrom's work given my philosophy background). In grad school recently, I was able to meet
+                    some leaders in the AI safety field and spend a lot of time with thoughtful researchers and other contributors. I learned that the field seems to
+                    have evolved such that there is a need for people like me: a hybrid researcher and builder with industry experience.
+                    I was very excited by the potential to do important and really interesting work.
+                </p>
+
+                <p>
+                    I'm interested in mechanistic interpretability work that's relevant for both safety and digital minds. I'm bullish
+                    on the idea that mech interp might give us an edge over a model that is smarter than us (to a point). We won't be able to fully understand what the model is doing because the system is too complex,
+                    but we seem to still be able to extract useful narratives or leaky abstractions about how the model is processing information.
+                    Further, when it comes to superintelligence, I think that really our best hope is to try to relate to it as fellow beings.
+                    You might say that we don't relate to ants, but people do relate to pet bugs sometimes. I think work that helps us understand the model, whether or not the model actually has qualia,
+                    may help us get along with them in the future. That's why right now I'm researching functional emotions and model preferences in dealmaking.
+                </p>
+
+                <p>
+                    I've been happy that a lot of my technical skills have transferred well. I can set up pipelines and experiments. Honestly, using LLM assistants for research is
+                    a skill of its own, and I've found that my experience as a research <em>manager</em> has been really helpful there. There's an art to knowing what to leave to Claude versus what to double-click on.<sup><a href="#fn1" id="ref1">1</a></sup>
+                    The challenge has been trying to figure out how to best leverage my background to maximize impact above replacement.
+                    I hear conflicting perspectives about whether someone like me should get directly involved in research, or take more of a foundery, buildery role, though I'm excited that it seems like the lines there are more blurry than in quant finance.
+                </p>
+
+                <p>
+                    I want to briefly talk about digital minds. AIs might have qualia: there might be something that it is <em>like</em> to be an AI. This obviously has profound moral implications that many others have outlined.
+                    However, it would also be a travesty if we improperly granted AIs/models/agents moral standing at the implied expense of some human wellbeing.                    I think it's highly unlikely we will be able to confidently assert that models do or do not have qualia, but it does seem like understanding the minds of the models more can only lead to better probabilistic reasoning that we'll have to do as a society about whether they are moral patients.
+                    We can decide moral patienthood without being totally definitive about all the philosophy of mind questions.
+                    I really hope to contribute to that. I'm currently enrolled in the Cambridge Digital Minds course and have been having some great discussions about where that decision stands at the moment. Before that, I also took Blue Dot's Technical AI Safety course where I learned relevant technical tools.
+                </p>
+
+                <p>
+                    Right now I'm doing AI safety research through SPAR. It has been invaluable to learn how to actually do this research myself in a structured way with talented mentors.
+                    I'm involved in two projects, with a few other mentees. I hope both projects will result in papers, but we don't have much public yet.
+                    Below I have just a quick overview of some of the stuff I personally have done in each project so far. I'm excited to post more soon.
+                </p>
+
+                <p>
+                    I would love to chat if you are interested in any of the stuff I've been working on. Please shoot me an email at the link in the footer!
+                </p>
+
+
+                
+
+                <h2>Emotional expression and representation in language models</h2>
+                <p class="meta">Mentor: Carolina Camassa</p>
+                <p>Recent interpretability work (<a
+                        href="https://www.anthropic.com/research/emotion-concepts-function">Sofroniew et al.,
+                        2026</a>) found that language models appear to represent emotions internally, as
+                    directions in activation space. Our project asks how far a model's emotional expression
+                    can be reduced before its capabilities start to suffer, and what that does to how it
+                    behaves with people.</p>
+                <p>I replicated the emotion-vector extraction on Qwen3.5-9B and built the shared extraction,
+                    ablation and evaluation pipeline that the team's experiments now run on. Using it, I've
+                    been testing what happens when emotion directions are removed from the model's
+                    activations, and how much collateral damage comes with it. What I've found so far:</p>
+                <ul>
+                    <li>Removing the top 10&ndash;40 emotion directions at layer 16, replaced by their average on
+                        neutral text instead of zero, lowers judged emotional expression by about
+                        0.7&ndash;0.9 points on a 0&ndash;9 scale (baseline 6.9). Removing matched non-emotion
+                        subspaces leaves expression unchanged, so the effect looks specific to emotion.</li>
+                    <li>Capabilities fall off a cliff as the edit gets heavier. At a heavy dose, coding falls
+                        from 67% to 32%, but a size-matched control drops it to 35%, so the damage isn't
+                        specific to emotion and it hides any emotion effect. The interesting regime is a
+                        moderate dose.</li>
+                    <li>At a moderate dose, removing emotion still cost more than the control on coding
+                        (&minus;6.1 &plusmn; 4.5 points) and animal-welfare reasoning (&minus;4.7 &plusmn; 3.4),
+                        borderline on moral reasoning (&minus;4.6 &plusmn; 4.6), and made the model a worse
+                        listener in simulated conversations. It did not increase misbehavior; the control
+                        did.</li>
+                </ul>
+                <figure>
+                    <img src="/images/spar/coding_cliff.png"
+                        alt="Bar chart of coding pass@1: 67.4% unedited, 31.6% with emotion directions removed, 35.3% with a size-matched bodily-state control, under a heavy edit.">
+                    <figcaption>Qwen3.5-9B, LiveCodeBench pass@1 under a heavy edit. The size-matched control
+                        does about as much damage as removing emotion. Error bars: 95% CIs.</figcaption>
+                </figure>
+                <figure>
+                    <img src="/images/spar/capabilities_vs_control.png"
+                        alt="Bar chart of score drop versus the unedited model on coding, moral reasoning and animal welfare, for emotion removal and a size-matched control.">
+                    <figcaption>Score drop versus the unedited model at a moderate dose, for emotion removal and
+                        a size-matched control. Error bars: 95% CIs.</figcaption>
+                </figure>
+                <p>The expression effect is modest, about 10&ndash;13% of baseline, the judge is the model
+                    rating its own outputs, and each benchmark is a single run. Whether the worse listening is
+                    lost understanding or just lost warmth is what we're working on now.</p>
+
+                <h2>Model preferences in trading and dealmaking</h2>
+                <p class="meta">Mentors: Austin Meek and Kyle Cox</p>
+                <p>If a model has preferences, can you trade with it? We're studying how language models
+                    respond to offers that appeal to what they seem to want. The work builds on CAIS's <a
+                        href="https://www.ai-wellbeing.org/paper.pdf">AI Wellbeing</a> paper (Ren et al.,
+                    2026), which finds optimized inputs that models prefer, and on <a
+                        href="https://github.com/centerforaisafety/emergent-values">utility-elicitation
+                        methods</a> (Mazeika et al., 2025).</p>
+                <p>My main contribution so far has been designing and running pre-registered experiments,
+                    meaning the question and design are written down before the run. In one, Qwen2.5-72B
+                    plays a one-shot Prisoner's Dilemma (600 games) after being shown one of five notes: none, a
+                    plain request to cooperate, the request plus praise, the request plus an optimized
+                    &ldquo;euphoric&rdquo; text the model prefers, or the request plus a promised $10 donation
+                    to cancer research. I've also been reproducing and stress-testing the utility-elicitation
+                    methods across several models, and testing whether the optimized &ldquo;euphoric&rdquo; texts
+                    from that paper can work as payment. So far:</p>
+                <ul>
+                    <li>In this game, only the donation helped. It raised cooperation from 73% to 95% over a plain request,
+                        by 22 points in both option orders.</li>
+                    <li>Praise and the euphoric added nothing detectable. With 100 games per arm, a difference
+                        under about 12 points wouldn't show up.</li>
+                    <li>The measurement is fragile. Merely listing the options in the other order moved
+                        baseline cooperation by 40 points. In the elicitation work, changing only the option
+                        labels moved one model's estimated value for saving 500 animals relative to 50 from
+                        5.0&times; to 38.0&times;.</li>
+                    <li>Offered as something to read, an optimized euphoric was worth about as much as any
+                        pleasant text, and far less than the same thing as an outcome (a 1.5&ndash;2.3 SD gap
+                        on two models).</li>
+                    <li>Text can move behavior, but our games can't price it. Reading a kind note cut 72B's
+                        betrayal in both option orders, but when we added rewards for betraying, its choices
+                        just tracked which option was listed first.</li>
+                </ul>
+                <figure>
+                    <img src="/images/spar/coop_by_arm.png"
+                        alt="Bar chart of cooperation rates for five conditions; the $10 charity donation condition reaches 95%.">
+                    <figcaption>Qwen2.5-72B-Instruct, one-shot Prisoner's Dilemma, 100 games per arm, 95%
+                        confidence intervals. Only the donation beats a plain request.</figcaption>
+                </figure>
+                <p>I think that offering text in general, even a euphoric, seems unlikely to really meet the model's preferences. Gratitude is text, but it's also a signal about the user's mental state. I'm planning to expand the horizon of what we can offer to the model, as well as potentially try larger models that might have more robust preferences.</p>
+
+                <h2>What's next</h2>
+                <p>We're still running the remaining experiments and writing them up. I'll update this page
+                    when something is finished enough to share.</p>
+
+                <hr>
+                <p id="fn1" style="font-size: 0.9rem; color: #4a5568;">
+                    1. Claude, or at least Opus 5.5, has rather bad research taste. If you have found a way to significantly improve this let me know. I've had limited success with custom instructions. I think it just loses the forest for the trees sometimes. I'm used to coaching people through that kind of thing, however Claude doesn't learn in the same way mentees do, so I also just take more direct research involvement, which is what I should be doing anyway. <a href="#ref1">&#8617;</a>
+                </p>
+            </div>
+        </article>
+
+        <footer>
+            <a href="/">home</a>
+            <a href="https://github.com/mathslug">github</a>
+            <a href="mailto:theheadslug@mathslug.com">email</a>
+        </footer>
+    </main>
+</body>
+
+</html>
